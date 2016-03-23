@@ -1,0 +1,1 @@
+open_basedir="D:\UPUPW_NP7.0\htdocs\Easypay\;D:\UPUPW_NP7.0\Guard\;D:\UPUPW_NP7.0\phpmyadmin\;D:\UPUPW_NP7.0\temp\;C:\WINDOWS\Temp\"
