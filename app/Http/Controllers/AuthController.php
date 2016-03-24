@@ -15,9 +15,10 @@ class AuthController extends Controller {
             'username'  => 'required|exists:users,username'
 		]);
 
+		$password = $request->input('password');
 		$user = User::where('username', $username)->firstOrFail();
-		if ($user->password === Hash::make($password)) {
-			$user->token = Hash::make($user->username);
+		if (Hash::check($password, $user->password)) {
+			$user->token = str_random(64);
 			$user->token_expired_at = date('Y-m-d H:i:s', time() + 2592000);
 			return response()->json($user);
 		} else {

@@ -29,5 +29,9 @@ Route::get('/', function () {
 Route::post('auth', 'AuthController@auth');
 Route::post('register', 'AuthController@register');
 Route::post('trade', 'TradeController@trade');
-Route::get('user/{id}', 'UserController@info');
-Route::get('user/{id}/tradeList', 'UserController@tradeList');
+Route::get('user/{id}', 'UserController@info')->where('id', '[0-9]+');
+
+// id: number
+// offset: 偏移量
+// limit: 最大数量
+Route::get('user/{id}/tradeList', 'UserController@tradeList')->where('id', '[0-9]+');
