@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('token')->nullable();
             $table->timestamp('token_expired_at')->nullable();
             $table->timestamps();
+
+            $table->index('token');
         });
     }
 

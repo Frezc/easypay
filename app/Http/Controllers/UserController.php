@@ -18,8 +18,8 @@ class UserController extends Controller {
 
 	public function tradeList(Request $request, $id) {
 		$this->validate($request, [
-			'offset' => 'numeric',
-			'limit'  => 'numeric'
+			'offset' => 'integer|min:0',
+			'limit'  => 'integer|min:0'
 		]);
 
 		$offset = $request->input('offset');

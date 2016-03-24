@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Trade extends Model
 {
     protected $table = 'tradepy';
+
+    protected $guarded = [];
 }

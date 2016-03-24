@@ -14,12 +14,12 @@ class CreateTradepyTable extends Migration
     {
         Schema::create('tradepy', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('pay_user_id');
-            $table->string('receive_user_id');
-            $table->string('trade_py'); //交易金额
-            $table->timestamp('created_at');
+            $table->integer('pay_user_id');
+            $table->integer('receive_user_id');
+            $table->float('trade_py'); // 交易金额
+            $table->timestamps();
 
-            $table->index('pay_user_id', 'receive_user_id');
+            $table->index(['pay_user_id', 'receive_user_id']);
         });
     }
 
