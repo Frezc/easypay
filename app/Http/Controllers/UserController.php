@@ -10,10 +10,14 @@ use App\Trade;
 
 class UserController extends Controller {
 
-	public function info(Request $request, $id) {
+	public function info($id) {
 		$user = User::findOrFail($id);
 
 		return response()->json($user);
+	}
+
+	public function recharge(Request $request) {
+		//todo
 	}
 
 	public function tradeList(Request $request, $id) {
@@ -22,8 +26,8 @@ class UserController extends Controller {
 			'limit'  => 'integer|min:0'
 		]);
 
-		$offset = $request->input('offset');
-		$limit = $request->input('limit');
+		$offset = $request->input('offset', 0);
+		$limit = $request->input('limit', 10);
 
 		$tradeList = Trade::where('pay_user_id', $id)
 			->orWhere('receive_user_id', $id)

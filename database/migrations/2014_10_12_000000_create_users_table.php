@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username')->unique();
             $table->string('password');
-            $table->float('money');
+            $table->double('money', 14, 2);
             $table->string('token')->nullable();
             $table->timestamp('token_expired_at')->nullable();
             $table->timestamps();

@@ -13,7 +13,7 @@ class TradeController extends Controller {
 		$this->validate($request, [
 			'token'		=>	'required|string',
 			'receiver'	=>	'required|integer',
-			'price'		=>	'required|min:0|numeric'
+			'money'		=>	'required|min:0|numeric'
 		]);
 
 		$sender = User::where('token', $request->input('token'))->first();
@@ -23,12 +23,12 @@ class TradeController extends Controller {
 
 
 			# check money
-			if ($sender->money < $request->input('price')) {
+			if ($sender->money < $request->input('money')) {
 				return response()->json(['msg' => 'Money does not enough.']);
 			}
 
 			# change sender's money
-			$sender->money -= $request->input('price');
+			$sender->money -= $request->input('money');
 			$sender->save();
 
 			# add into trade form

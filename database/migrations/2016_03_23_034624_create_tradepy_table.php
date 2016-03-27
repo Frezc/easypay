@@ -16,7 +16,7 @@ class CreateTradepyTable extends Migration
             $table->increments('id');
             $table->integer('pay_user_id');
             $table->integer('receive_user_id');
-            $table->float('trade_py'); // 交易金额
+            $table->double('money', 14, 2); // 交易金额
             $table->timestamps();
 
             $table->index(['pay_user_id', 'receive_user_id']);

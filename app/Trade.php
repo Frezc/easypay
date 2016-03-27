@@ -9,4 +9,8 @@ class Trade extends Model
     protected $table = 'tradepy';
 
     protected $guarded = [];
+
+    protected $hidden = [
+        'updated_at'
+    ];
 }
