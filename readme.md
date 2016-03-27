@@ -20,7 +20,7 @@ response返回基本都是json类型，其旁边有注明。
 	- username: [*formData*] 用户名
 	- password: [*formData*] 密码
 - response(json)
-```json
+```
 {
 	user: {
     	id[int]: 用户id,
@@ -40,7 +40,7 @@ response返回基本都是json类型，其旁边有注明。
 	- username: [*formData*] 用户名 (1~32)
 	- password: [*formData*] 密码 (6~64)
 - response(json)
-```json
+```
 {
 	id[int]: 用户id,
     username: 用户名,
@@ -55,7 +55,7 @@ response返回基本都是json类型，其旁边有注明。
 - request
 	- id: [*path*] 用户的id
 - response(json)
-```json
+```
 {
 	id[int]: 用户id,
     username: 用户名,
@@ -73,7 +73,7 @@ response返回基本都是json类型，其旁边有注明。
 	- limit: [*query*] 返回的最多交易数，默认10
 - example: http://{host}/user/{id}/tradeList?id={id}&offset={offset}&limit={limit}
 - response(json)
-```json
+```
 {
 	id[int]: 交易记录的id,
     pay_user_id[int]: 支付用户的id,
@@ -91,7 +91,7 @@ response返回基本都是json类型，其旁边有注明。
 	- receiver: [*any*] 交易接收者的id
 	- money: [*any*] 交易的金额
 - response(json)
-```json
+```
 {
 	id[int]: 本次交易的id,
     pay_user_id[int]: 支付用户的id,
