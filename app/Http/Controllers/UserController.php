@@ -17,7 +17,15 @@ class UserController extends Controller {
 	}
 
 	public function recharge(Request $request) {
-		//todo
+		$this->validate($request, [
+			'userId' => 'required|integer',
+			'money'  => 'required|integer|min:0'
+		]);
+		
+		$user = User::findOrFail($request->input('userId'));
+		$user->update(['money' => $user->money + $request->input('money')]);
+		
+		return 'success';
 	}
 
 	public function tradeList(Request $request, $id) {
