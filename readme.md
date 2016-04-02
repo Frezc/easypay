@@ -1,17 +1,23 @@
 ###说明
 
 下面没有列出请求失败的情况，如果返回不是2XX就为失败
-在request中的 `[*XXX*]` 为请求参数的位置, 以下是一些说明
+
+#####request
+request中的 `[*XXX*]` 为请求参数的位置, 以下是一些说明
 - formData: 请求为表单格式，该项在请求的body中
 - query: 该参数在url中指明，如 http://{host}/a?query=value
 - path: 该参数在url的指定路径，如 http://{host}/{path}
 - any: query或formData
 
+#####response
 response返回基本都是json类型，其旁边有注明。
+
 在json的参数中会有`[int]`信息来指明该项数据类型, 未标注默认是`[string]`。
 
 ###API
 **host:** 120.27.131.127:12450
+
+**root:** /
 
 **auth**
 - mothod: *POST*
