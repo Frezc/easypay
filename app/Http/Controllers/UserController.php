@@ -23,7 +23,9 @@ class UserController extends Controller {
 		]);
 		
 		$user = User::findOrFail($request->input('userId'));
-		$user->update(['money' => $user->money + $request->input('money')]);
+		// $user->update(['money' => $user->money + $request->input('money')]);
+		$user->money += $request->input('money');
+		$user->save();
 		
 		return 'success';
 	}
