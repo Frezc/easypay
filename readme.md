@@ -14,6 +14,21 @@ response返回基本都是json类型，其旁边有注明。
 
 在json的参数中会有`[int]`信息来指明该项数据类型, 未标注默认是`[string]`。
 
+#####遇到错误时的返回格式
+由于浏览器在碰到错误返回时会忽略`Access-Control-Allow-Origin:*`这个header，所以所有返回的状态码都是200。
+```
+{
+    code: 404, // 错误代码
+    error: 'error description'  // 错误信息
+}
+```
+在判断是否成功时建议
+```
+if (!json.code || json.code == 200) {
+    // success
+}
+```
+
 ###API
 **host:** 120.27.131.127:12450
 
