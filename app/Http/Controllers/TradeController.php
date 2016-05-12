@@ -35,7 +35,7 @@ class TradeController extends Controller {
 			$trade = Trade::create([
 				'pay_user_id'		=>	$sender->id,
 				'receive_user_id'	=>	$request->input('receiver'),
-				'trade_py'			=>	$request->input('price')
+				'trade_py'			=>	$request->input('money')
 			]);
 
 			return response()->json($trade);
